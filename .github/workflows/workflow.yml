@@ -33,4 +33,4 @@ jobs:
       # Run the POSTMAN collection
       - name: Run POSTMAN collection
         run: |
-          newman run TareaReposicion.postman_collection.json
+          newman run TareaReposicion.postman_collectionNew.json
