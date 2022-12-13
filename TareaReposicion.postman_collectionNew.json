@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "98d6e2bf-d8fd-44a4-a575-0f3c7c8ac305",
+		"name": "TareaReposicion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24299416"
+	},
+	"item": [
+		{
+			"name": "Patch",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/* Validar que el request reciba un status 200, para verificar que fue efectuado con éxito */",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"/* Validar que el nombre que fue editado sea iguala Lared*/",
+							"pm.test('Validar Nombre', function(){",
+							"    let jsonData = pm.response.json().firstname;",
+							"    pm.expect(jsonData).to.eql('Lared');",
+							"});",
+							"",
+							"/* Validar que el apellido que fue editado sea iguala BrownTo*/",
+							"pm.test('Validar Apellido', function(){",
+							"    let jsonData = pm.response.json().lastname;",
+							"    pm.expect(jsonData).to.eql('BrownTo');",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "token=695bd8644c0a228",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\": \"Lared\",\n    \"lastname\": \"BrownTo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{booking-url}}/booking/1",
+					"host": [
+						"{{booking-url}}"
+					],
+					"path": [
+						"booking",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
