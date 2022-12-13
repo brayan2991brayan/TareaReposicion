@@ -57,7 +57,7 @@
 					},
 					{
 						"key": "Cookie",
-						"value": "token=695bd8644c0a228",
+						"value": "token=0a46612277af430",
 						"type": "text"
 					}
 				],
@@ -71,9 +71,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{booking-url}}/booking/1",
+					"raw": "https://restful-booker.herokuapp.com/booking/1",
+					"protocol": "https",
 					"host": [
-						"{{booking-url}}"
+						"restful-booker",
+						"herokuapp",
+						"com"
 					],
 					"path": [
 						"booking",
